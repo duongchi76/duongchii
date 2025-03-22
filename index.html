@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+       
+        <style>
+body{
+    background-image:url('https://lh3.googleusercontent.com/pw/AP1GczNO1mSgyJa05CGDOpN6p3r1HKYQAPIbSEhEPeHBqZA1drwRXHYjxyakH2CgDvMlfdTzxOXJY69QeROR7WRg8An9cd5qFngtRrvH55s6mxR2Jprx8iQD2Dt7-DEt0NZ6cPoOY5qCnyDqkmPIvpE-5qzp=w962-h641-s-no-gm?authuser=0');
+    background-size:cover;
+    background-position-y: -100px ;
+}
+.container{
+    max-width: 960px;
+    margin: 0px auto;
+}
+#header{
+    background-color: #131921;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#main-menu{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#main-menu li a{
+    color: #f8f8f8;
+    display:block ;
+    padding: 18px 20px;
+    text-decoration: none;
+}
+#main-menu ul.sub-menu{
+    position: absolute;
+    background-color: #131921;
+    padding: 15px 0px ;
+    list-style: none;
+    width: 200px;
+    border: 1px solid #434343;
+    display: none;
+
+}
+#main-menu li:hover>ul.sub-menu{
+    display: block;
+}
+#main-menu ul.sub-menu a{
+    padding: 8px 15px;
+    border-bottom: 1px solid #312f2f;
+    left:0;
+}
+#main-menu ul.sub-menu li:hover a{
+    border-bottom: 1px solid #dfd5d5;
+}
+#main-menu ul.sub-menu li: :last-child a{
+    border:none;
+}
+#main-menu ul.sub-menu ul.sub-menu{
+    left:199px;
+    top: -15px ;
+}
+
+#main-menu>li>a{
+    position: relative;
+}
+    #main-menu>li>a::before{
+        content:"";
+        height: 4px;
+        width: 0px;
+        background: #f00;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    #main-menu>li:hover>a::before{
+        width: 100%;
+    }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                <nav class="container">
+            
+                 <ul id="main-menu">
+                    <li><a href="">TRANG CHỦ </a></li>
+                    <li><a href="">PROFILE </a>
+                        <ul class="sub-menu">
+                            <li><a href="bài 3.htm">BIO </a></li>
+                
+                        
+                        </ul>
+                    </li>
+                    <li><a href="">BÀI TẬP </a>
+                        <ul class="sub-menu">
+                            
+                            <li><a href="">BUỔI 6</a>
+                                <ul class="sub-menu">
+                                    <li><a href="">BÀI 1 </a></li>
+                                    <li><a href="bài 2.htm">BÀI 2 </a></li>
+                                  
+                                
+                                </ul>
+                            </li>
+
+                 </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>baomol.com</title>
+   <style>
+    body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #6353f5;
+  padding: 10px 0;
+  color:#fcf9f9;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+main {
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+}
+
+.left-column {
+  flex: 2;
+  padding-right: 20px;
+}
+
+.right-column {
+  flex: 1;
+  
+}
+
+.main-news img {
+  width: 100%;
+  height: auto;
+}
+
+.sub-news {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.news-item {
+  width: 28%;
+  margin-bottom: 10px;
+}
+
+.news-item img {
+  width: 100%;
+  height: auto;
+  
+}
+
+.news-list .news-item {
+  border-bottom: 1px solid #eee;
+  padding: 5px 0;
+}
+
+/* Thêm hiệu ứng hover nếu cần */
+nav a:hover {
+  color: #d4d7da;
+}
+
+.news-item img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+   </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">NÓNG</a></li>
+                <li><a href="#">MỚI</a></li>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">CHỦ ĐỀ</a></li>
+                <li><a href="#">Năng lượng tích cực</a></li>
+                <li><a href="#">Khám phá Việt Nam</a></li>
+                <li><a href="#">Khám phá Thế Giới</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-column">
+                <div class="main-news">
+                    <img src="https://cdnmedia.baotintuc.vn/Upload/cl7DTRhHBJYRLNmZYSjctQ/files/1803-Trump-Putin.jpg" alt="Putin and Trump">
+                    <h2>Nga đồng ý ngừng tấn công vào cơ sở năng lượng của Ukraine</h2>
+                </div>
+                <div class="sub-news">
+                    <div class="news-item">
+                        <img src="https://cdn.24h.com.vn/upload/1-2025/images/2025-03-19/Gia-vang-vuot-100-trieu-dong-luong-Nguoi-tung-ban-vang-mua-dat-nhan-cai-ket-bat-ngo-666-1742380744-153-width2560height1706.jpg" alt="Gold Price">
+                        <p>Giá vàng hôm nay 19/3...</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://images2.thanhnien.vn/528068263637045248/2025/3/19/vietnam-campuchia-3-17424046004351216976634.jpg" alt="Vietnam vs Campuchia">
+                        <p>Tuyển Việt Nam đấu Campuchia...</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://file3.qdnd.vn/data/images/0/2022/03/15/thuylinh/tong%20thong%20ukraine%20volodymyr%20zelensky%202.jpg" alt="Ukraine President">
+                        <p>Tổng thống Ukraine lên tiếng...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="news-list">
+                    <div class="news-item">
+                        <img src="https://photo-baomoi.bmcdn.me/w250_r3x2_sm/2025_03_20_112_51765044/b15c83e087ae6ef037bf.jpg.avif">
+                        <p>Công nghiệp Mỹ mở rộng bầu Việt Nam</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://photo-baomoi.bmcdn.me/w250_r3x2_sm/2025_03_20_112_51765044/b15c83e087ae6ef037bf.jpg.avif">
+                        <p>Cán bộ TP.HCM mạnh dạn đổi mới vì dân...</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://photo-baomoi.bmcdn.me/w250_r3x2_sm/2025_03_20_112_51765044/b15c83e087ae6ef037bf.jpg.avif">
+                        <p>100 cán bộ Đoàn xuất sắc nhận Giải thưởng Lý Tự Trọng</p>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://photo-baomoi.bmcdn.me/w250_r3x2_sm/2025_03_20_112_51765044/b15c83e087ae6ef037bf.jpg.avif">
+                        <p>Sẽ quy đổi điểm trúng tuyển đại học tương đương</p>
+                    </div>
+                    <div class="news-item">
+                        <p>Giải mã lối đánh giúp Nga đẩy lùi quân Ukraine tại Kursk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <a href="/dropdown-menu/trang chu.html">Quay về </a>
+</html>
