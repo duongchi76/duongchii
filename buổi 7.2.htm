@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        
+@font-face {
+    font-family: function;
+    src: url(https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Liter&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: rgb(31, 31, 39);
+}
+
+
+.background-pic {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.background-pic img{
+    width: auto;
+    height: 100%;
+}
+
+/* ------------------Header------------------ */
+.header {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    color: white;
+    height: 80px;
+    z-index: 4;
+    align-content: center; 
+}
+
+.logo-header {
+    justify-content: center;
+    list-style: none;
+    line-height: 70px;
+    text-align: center;
+    width: auto;
+    padding: 5px;
+    margin-left: 30px;
+    font-size: 28px;
+}
+
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    justify-content: space-evenly;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    font-family: function, sans-serif;
+}
+
+.nav {
+    font-size: 18px;
+    margin: 0px 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: white;
+    transition: 0.4s;
+}
+
+.nav:hover:after {
+    left: 0%;
+    width: 100%;
+}
+
+.subnav {
+    list-style-type: none;
+    padding: 8px;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    margin: 5px;
+    width: 200px;
+    display: none;
+}
+
+.subnav li {
+    cursor: pointer;
+    position: relative;
+    margin: 6px 12px;
+    padding-top: 5px;
+}
+
+.nav:hover .subnav {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: function, sans-serif;
+    font-size: 14px;
+    position: relative;
+}
+
+.subnav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: black;
+    transition: 0.4s;
+}
+.subnav a:hover:after {
+    left: 0%;
+    width: 100%;
+}
+
+
+/* New Arrivals */
+.new-arrivals {
+    padding: 12px;
+    margin-top: 30px;
+}
+
+.head {
+    width: 100%;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    padding: 12px 8px;
+    font-weight: 100;
+}
+
+.item-box {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.item-in {
+    width: 350px;
+    height: 520px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.pic {
+    width: 100%;
+    position: relative;
+    height: 445px;
+    overflow: hidden;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 12px;
+}
+
+.pic > img.lop1 {
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+.item-in:hover .lop1 {
+    opacity: 0;;
+}
+
+.pic > img.lop2 {
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.item-in:hover .lop2 {
+    opacity: 1;
+}
+
+.des {
+    color: black;
+    font-size: 20px;
+    padding: 8px 12px;
+}
+
+.name-and-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.caption {
+    font-size: 16px;
+    padding: 8px 0px;
+    color: #464444;
+}
+
+.quay-lai {
+    text-align: center;
+    height: 80px;
+    align-content: center;
+}
+
+.quay-lai a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    background-color: rgb(27, 25, 25);
+    padding: 12px 12px;
+    border-radius: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-pic">
+            <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/home_slider_2.png?raw=true" alt="">
+        </div>
+
+        <div class="header">
+            <div class="logo-header">
+                <h1>Kalium</h1>
+            </div>
+
+            <div class="navbar"> 
+
+                <div class="nav">
+                    <p>Home <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+                    <div class="subnav">
+                        <li><a href="">Home Fullscreen</a></li>
+                        <li><a href="">Home Parallax</a></li>
+                    </div>
+                </div>
+
+                <div class="nav">
+                    <p>Shop <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+                    <div class="subnav">
+                        <li><a href="">Women</a></li>
+                        <li><a href="">Men</a></li>
+                        <li><a href="">Shoes</a></li>
+                        <li><a href="">Accessories</a></li>
+                        <li><a href="">Variants</a></li>
+                        <li><a href="">Pagination</a></li>
+                        <li><a href="">Cart Icon</a></li>
+                    </div>
+                </div>
+
+                <div class="nav">
+                    <p>Product <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+                    <div class="subnav">
+                        <li><a href="">Simple Product</a></li>
+                        <li><a href="">Variable Product</a></li>
+                        <li><a href="">Extarnal Product</a></li>
+                        <li><a href="">Grouped Product</a></li>
+                        <li><a href="">Catalog Mode (No Price)</a></li>
+                    </div>
+                </div>
+
+                <div class="nav">
+                    <p>News <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+                    <div class="subnav">
+                        <li><a href="">Sidebar Left</a></li>
+                        <li><a href="">Sidebar Right</a></li>
+                    </div>
+                </div>
+
+                <div class="nav">
+                    <p>Pages <i class="fa fa-angle-down" aria-hidden="true"></i></p>
+                    <div class="subnav">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Card</a></li>
+                        <li><a href="">Checkout</a></li>
+                        <li><a href="">Login / Register</a></li>
+                    </div>
+                </div>
+
+                <div class="nav">Buy Now</div>
+                <div class="nav"><i class="fa fa-search" aria-hidden="true"></i></div>
+                <div class="nav"><i class="fa fa-shopping-bag" aria-hidden="true"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="new-arrivals">
+            <div class="head">
+                <h5>New Arrivals</h5>
+                <h6  class="caption">Lastest From our Store</h6>
+            </div>
+
+            <div class="item-box">
+                <div class="item-in">
+                    <div class="pic">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o1-1.jpg?raw=true" alt="" class="lop1">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o1-2.jpg?raw=true" alt="" class="lop2">
+                    </div>
+                    <div class="des">
+                        <div class="name-and-price">
+                            <p>Broken T Shirt</p>
+                            <p>$9</p>
+                        </div>
+                        <p class="caption">Men, T Shirts</p>
+                    </div>
+                </div>
+
+                <div class="item-in">
+                    <div class="pic">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o2-1.jpg?raw=true" alt="" class="lop1">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o2-2.jpg?raw=true" alt="" class="lop2">
+                    </div>
+                    <div class="des">
+                        <div class="name-and-price">
+                            <p>Knickerboxer</p>
+                            <p>$25</p>
+                        </div>
+                        <p class="caption">Men, Sweaters</p>
+                    </div>
+                </div>
+
+                <div class="item-in">
+                    <div class="pic">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o3-1.jpg?raw=true" alt="" class="lop1">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o3-2.jpg?raw=true" alt="" class="lop2">
+                    </div>
+                    <div class="des">
+                        <div class="name-and-price">
+                            <p>Studio Belt</p>
+                            <p>$7</p>
+                        </div>
+                        <p class="caption">Accessories</p>
+                    </div>
+                </div>
+
+                <div class="item-in">
+                    <div class="pic">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o4-1.png?raw=true" alt="" class="lop1">
+                        <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai2/o4-2.jpg?raw=true" alt="" class="lop2">
+                    </div>
+                    <div class="des">
+                        <div class="name-and-price">
+                            <p>Chambray Shirt</p>
+                            <p>$29</p>
+                        </div>
+                        <p class="caption">Men, Sweater</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="quay-lai">
+        <a href="index.html">Quay lại</a>
+    </div>
+
+</body>
+</html>
