@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-size-all: 40px;
+}
+
+.container {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.main-logo {
+    margin-left: 20px;
+}
+
+.toggle-bars {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    margin-right: 20px;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.toggle-bars__bar-line {
+    background-color: black;
+    width: 100%;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-open .toggle-bars__bar-line--top {
+    transform: translateY(8px) rotate(45deg);
+    background-color: white;
+}
+
+.menu-open .toggle-bars__bar-line--middle {
+    opacity: 0;
+}
+
+.menu-open .toggle-bars__bar-line--bottom {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: white;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.menu-open .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu a {
+    display: flex;
+    color: white;
+    font-size: 24px;
+    margin: 10px 0;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 30px;
+}
+
+.menu a:hover {
+    color: #ccc;
+}
+
+
+.typed-cursor {
+    display: inline-block;
+    animation: blinkCursor 0.8s infinite;
+}
+body{
+    padding-top: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{ 
+    text-align: center;
+    font-size: var(--font-size-all);
+    line-height: normal;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.dynamic-wrapper {
+    list-style-type: none;
+    color: white;
+    background: black;
+    font-size: var(--font-size-all);
+    font-weight: 500px;
+    text-align: start;
+}
+
+.wrapper .dynamic-wrapper {
+    margin-left: 15px;
+    font-size: 40px;
+}
+
+
+.creative-text {
+    color: white;
+    background-color: black;
+    display: inline; 
+}
+.typed-cursor {
+    display: inline; 
+    animation: blinkCursor 0.8s infinite;
+}
+.horizontal-menu {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8; 
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd; 
+}
+
+.horizontal-menu a {
+    text-decoration: none;
+    color: #333; 
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 20px; 
+    text-transform: uppercase; 
+    transition: color 0.3s ease; 
+}
+
+.horizontal-menu a:hover {
+    color: #007bff;
+}
+
+.horizontal-menu a.active {
+    color: #007bff; 
+    border-bottom: 2px solid #007bff; 
+    padding-bottom: 5px; 
+}
+@keyframes blinkCursor {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+@media screen and (max-width: 768px) {
+    .toggle-bars {
+        width: 35px;
+        height: 30px;
+        right: 10px;
+    }
+
+    .main-logo {
+        margin-left: 15px;
+    }
+}
+
+/* Content */
+.content {
+    display: grid;
+    gap: 10px;
+    margin: 12px;
+    grid-template-columns: repeat(3 , 300px);
+    grid-template-rows: repeat(6, 100px);
+}
+
+.content-item-1 {
+    grid-row: 1/3;
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+.content-item-3 {
+    grid-row: 1/4;
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+.content-item-6 {
+    grid-row: 4/6;
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+.content-item-5 {
+    grid-row: 3/5;
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+.content-item-4 {
+    grid-row: 1/3;
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+.content-item-2 {
+    grid-row: 3/5;
+    text-align: center;
+    align-content: center;
+    position: relative;
+}
+
+.layer-ngoai {
+    background-color: white;
+    position: absolute;
+    z-index: 4;
+    top: 7.5%;
+    left: 5%;
+    opacity: 1;
+    height: 85%;
+    width: 90%;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.layer-ngoai:hover {
+    opacity: 1;
+}
+
+.icon {
+    width: 100%;
+    height: 25%;
+    text-align: start;
+    align-content: center;
+    padding: 25px;
+    font-size: 24px;
+}
+
+
+.text {
+    width: 100%;
+    text-align: start;
+    align-content: center;
+    padding: 25px;
+}
+
+.text .maintext {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.text .subtext {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+
+/* clients */
+.client-head-dis .headings {
+    font-size: 32px;
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+}
+
+.client-head-dis .description {
+    font-size: 20px;
+    color: #666;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+}
+
+.stuff {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    margin: 12px 8px;
+}
+
+.stuff .stuff-item {
+    width: 22%;
+    padding: 8px 12px;
+    position: relative;
+    margin: 8px;
+    cursor: pointer;
+}
+
+.stuff .stuff-item img {
+    width: 100%;
+    height: auto;
+}
+
+
+.sublayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: #333;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stuff-item:hover .sublayer {
+    opacity: 1;
+}
+
+/* button quay lại */
+
+.quay-lai {
+    text-align: center;
+    height: 80px;
+    align-content: center;
+}
+
+.quay-lai a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    background-color: rgb(15, 14, 14);
+    padding: 12px 12px;
+    border-radius: 10px;
+}
+    </style>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBars = document.querySelector(".toggle-bars");
+        const header = document.querySelector(".site-header");
+
+        toggleBars.addEventListener("click", function () {
+            header.classList.toggle("menu-open");
+        });
+    });
+</script>
+
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="header-container">
+                <a href="#" class="toggle-bars" aria-label="Toggle navigation" role="button">
+                    <span class="toggle-bars__bar-line toggle-bars__bar-line--top"></span>
+                    <span class="toggle-bars__bar-line toggle-bars__bar-line--middle"></span>
+                    <span class="toggle-bars__bar-line toggle-bars__bar-line--bottom"></span>
+                </a>
+                <img src="https://demo.kaliumtheme.com/agency/wp-content/uploads/2021/06/Kalium-Theme-Icon.png" class="main-logo" width="50" height="50" alt="Kalium">
+            </div>
+            <div class="menu-overlay">
+                <nav class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">Portfolio</a>
+                    <a href="#">Team</a>
+                    <a href="#">Services</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Buy Now!</a>
+                    <a href="#">Search</a>
+                </nav>
+            </div>
+        </header>
+        <h1>Clear thinking at the wrong moment can stifle
+            <span class="wrapper">
+                <div class="dynamic-wrapper">
+                    <li class="dynamictext">Creative</li>
+                </div>
+                <span class="typed-cursor">_</span>
+            </span>
+        </h1>
+        <nav class="horizontal-menu">
+            <a href="#" class="active">All</a>
+            <a href="#">Branding</a>
+            <a href="#">Digital Art</a>
+            <a href="#">Photography</a>
+            <a href="#">Print</a>
+        </nav>
+
+        <div class="content">
+            <div class="content-item-1">
+                <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai3/o1.jpg?raw=true" alt="">
+                <div class="layer-ngoai">
+                    <div class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <div class="maintext">ADESTRA</div>
+                        <div class="subtext">Branding, Print</div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="content-item-3">
+                <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai3/o3.jpg?raw=true" alt="">
+                <div class="layer-ngoai">
+                    <div class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <div class="maintext">DESK CONCEPT</div>
+                        <div class="subtext">Photography</div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="content-item-4">
+                <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai3/o4.jpg?raw=true" alt="">
+                <div class="layer-ngoai">
+                    <div class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <div class="maintext">Capricho</div>
+                        <div class="subtext">Digital Art</div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="content-item-2">
+                <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai3/o2.jpg?raw=true" alt="">
+                <div class="layer-ngoai">
+                    <div class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <div class="maintext">CLOUD INC</div>
+                        <div class="subtext">Print</div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="content-item-5">
+                <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai3/o5.jpg?raw=true" alt="">
+                <div class="layer-ngoai">
+                    <div class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <div class="maintext">MULTI COLOR</div>
+                        <div class="subtext">Digital Art</div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="content-item-6">
+                <img src="https://github.com/HBinSD/baibuoi7/blob/main/bai3/o6.jpg?raw=true" alt="">
+                <div class="layer-ngoai">
+                    <div class="icon"><i class="fa fa-heart-o" aria-hidden="true"></i></div>
+                    <div class="text">
+                        <div class="maintext">ETHICS FOR DESIGN</div>
+                        <div class="subtext">Print</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+            <div class="clients">
+                <div class="client-head-dis">
+                    <div class="headings">
+                        <h4>Clients.</h4>
+                    </div>
+                    <div class="description">
+                        <p>Behind our customers see a project, behind every project opportunity.</p>
+                        <p>These are some with whom we had the pleasure of working. You want to be the next?</p>
+                    </div>
+    
+                    <div class="stuff">
+                        <div class="stuff-item">
+                            <img src="stuff1.png" alt="">
+                            <div class="sublayer">BARCODE</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff2.png" alt="">
+                            <div class="sublayer">FLSHGRN</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff3.png" alt="">
+                            <div class="sublayer">WEARETHESHIT</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff4.png" alt="">
+                            <div class="sublayer">ADESTRA</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff5.png" alt="">
+                            <div class="sublayer">HAPPY</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff6.png" alt="">
+                            <div class="sublayer">INK</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff7.png" alt="">
+                            <div class="sublayer">BIRDY</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                        <div class="stuff-item">
+                            <img src="stuff8.png" alt="">
+                            <div class="sublayer">THEB</div>
+                            
+                            <div class="text-layer"></div>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+            <div class="quay-lai">
+                <a href="index.html">Quay lại</a>
+            </div>
+    </div>
+</body>
+</html>
