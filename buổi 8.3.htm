@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trò chơi: Hãy đoán xem</title>
+</head>
+<body>
+  <h2>Trò chơi: Hãy đoán xem!</h2>
+  <p>Hệ thống sẽ chọn ngẫu nhiên 1 số từ 1 đến 10. Hãy đoán đúng số đó!</p>
+  <button onclick="choiDoanSo()">Bắt đầu chơi</button>
+<script>
+    function choiDoanSo() {
+  var soNgauNhien = Math.floor(Math.random() * 10) + 1; 
+  var soNguoiDoan;
+
+  do {
+    soNguoiDoan = prompt("Hãy đoán một số từ 1 đến 10:");
+    soNguoiDoan = parseInt(soNguoiDoan);
+
+    if (isNaN(soNguoiDoan) || soNguoiDoan < 1 || soNguoiDoan > 10) {
+      alert("Vui lòng nhập số nguyên từ 1 đến 10.");
+    } else if (soNguoiDoan !== soNgauNhien) {
+      alert("Sai rồi! Hãy thử lại.");
+    }
+  } while (soNguoiDoan !== soNgauNhien);
+
+  alert("🎉 Chính xác! Bạn đã đoán đúng số: " + soNgauNhien);
+}
+
+</script>
+<a href="index.html">Quay về </a>
+</body>
+</html>
