@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Slide Show Ảnh</title>
+<style>
+  .slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .slide {
+    display: none;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+</style>
+</head>
+<body>
+
+<h2>Slide Show Ảnh</h2>
+
+<div class="slideshow-container">
+
+  <div class="slide">
+    <img src="https://d1hjkbq40fs2x4.cloudfront.net/2016-01-31/files/1045.jpg" alt="Ảnh 1">
+
+  </div>
+
+  <div class="slide">
+    <img src="https://blueskytravel.com.vn/images/News/cover-nui-Alps.jpg" alt="Ảnh 2">
+
+  </div>
+
+  <div class="slide">
+    <img src="https://blueskytravel.com.vn/UserFiles/Image/The-Alps-places-of-grace-and-mystery-Photograped-by-Roberto-Bertero-59c9408645c51__880.jpg" alt="Ảnh 3">
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
+<a href="index.html">Quay về </a>
+</body>
+</html>

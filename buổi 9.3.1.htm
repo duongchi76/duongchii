@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Đổi màu bằng JavaScript</title>
+<style>
+  #myText {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  .blue-button {
+    background-color: lightblue;
+    color: black;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<p id="myText">Đổi màu tôi đi</p>
+<button class="blue-button" onclick="changeColor()">xanh</button>
+
+<script>
+function changeColor() {
+  document.getElementById("myText").style.backgroundColor = "lightblue";
+}
+
+</script>
+<a href="index.html">Quay về </a>
+</body>
+</html>

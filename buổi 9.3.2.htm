@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thực hiện phép tính và đổi màu</title>
+<style>
+  .operation-row {
+    margin-bottom: 10px;
+  }
+
+  .operation-label {
+    display: inline-block;
+    width: 80px;
+  }
+
+  .number-input {
+    width: 50px;
+    padding: 5px;
+  }
+
+  .operator {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .equal-sign {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .result-display {
+    width: 50px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+
+  #history-container {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+
+  #history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #history-list li {
+    display: inline;
+    margin-right: 15px;
+  }
+
+  .history-item {
+    cursor: pointer;
+  }
+
+  .history-item:hover {
+    color: blue;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<h2>Các phép toán</h2>
+
+<div class="operation-row">
+  <label class="operation-label">phép cộng</label>
+  <input type="number" class="number-input" id="add1" value="3">
+  <span class="operator">+</span>
+  <input type="number" class="number-input" id="add2" value="3">
+  <span class="equal-sign">=</span>
+  <input type="text" class="result-display" id="addResult" readonly>
+  <button onclick="calculate('add')">Tính</button>
+</div>
+
+<div class="operation-row">
+  <label class="operation-label">phép trừ</label>
+  <input type="number" class="number-input" id="subtract1" value="3">
+  <span class="operator">-</span>
+  <input type="number" class="number-input" id="subtract2" value="3">
+  <span class="equal-sign">=</span>
+  <input type="text" class="result-display" id="subtractResult" readonly>
+  <button onclick="calculate('subtract')">Tính</button>
+</div>
+
+<div class="operation-row">
+  <label class="operation-label">phép nhân</label>
+  <input type="number" class="number-input" id="multiply1" value="2">
+  <span class="operator">*</span>
+  <input type="number" class="number-input" id="multiply2" value="2">
+  <span class="equal-sign">=</span>
+  <input type="text" class="result-display" id="multiplyResult" readonly>
+  <button onclick="calculate('multiply')">Tính</button>
+</div>
+
+<div class="operation-row">
+  <label class="operation-label">phép chia</label>
+  <input type="number" class="number-input" id="divide1" value="3">
+  <span class="operator">/</span>
+  <input type="number" class="number-input" id="divide2" value="3">
+  <span class="equal-sign">=</span>
+  <input type="text" class="result-display" id="divideResult" readonly>
+  <button onclick="calculate('divide')">Tính</button>
+</div>
+
+<div id="history-container">
+  <h2>Các phép toán vừa thực hiện</h2>
+  <ul id="history-list">
+    </ul>
+</div>
+
+<script>
+  const historyList = document.getElementById('history-list');
+  let history = [];
+
+  function calculate(operation) {
+    let num1, num2, result, displayText;
+
+    switch (operation) {
+      case 'add':
+        num1 = parseFloat(document.getElementById('add1').value);
+        num2 = parseFloat(document.getElementById('add2').value);
+        result = num1 + num2;
+        document.getElementById('addResult').value = result;
+        displayText = `${num1} + ${num2} = ${result}`;
+        break;
+      case 'subtract':
+        num1 = parseFloat(document.getElementById('subtract1').value);
+        num2 = parseFloat(document.getElementById('subtract2').value);
+        result = num1 - num2;
+        document.getElementById('subtractResult').value = result;
+        displayText = `${num1} - ${num2} = ${result}`;
+        break;
+      case 'multiply':
+        num1 = parseFloat(document.getElementById('multiply1').value);
+        num2 = parseFloat(document.getElementById('multiply2').value);
+        result = num1 * num2;
+        document.getElementById('multiplyResult').value = result;
+        displayText = `${num1} * ${num2} = ${result}`;
+        break;
+      case 'divide':
+        num1 = parseFloat(document.getElementById('divide1').value);
+        num2 = parseFloat(document.getElementById('divide2').value);
+        if (num2 === 0) {
+          document.getElementById('divideResult').value = 'Lỗi';
+          displayText = `${num1} / ${num2} = Lỗi`;
+        } else {
+          result = num1 / num2;
+          document.getElementById('divideResult').value = result;
+          displayText = `${num1} / ${num2} = ${result}`;
+        }
+        break;
+    }
+
+    if (displayText) {
+      addHistory(displayText, operation);
+    }
+  }
+
+  function addHistory(text, operation) {
+    history.push({ text: text, operation: operation });
+    updateHistoryDisplay();
+  }
+
+  function updateHistoryDisplay() {
+    historyList.innerHTML = '';
+    history.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = item.text;
+      listItem.classList.add('history-item');
+      listItem.addEventListener('click', () => highlightOperation(item.operation));
+      historyList.appendChild(listItem);
+    });
+  }
+
+  function highlightOperation(operationType) {
+    // Reset background color of all result fields
+    const resultFields = document.querySelectorAll('.result-display');
+    resultFields.forEach(field => {
+      field.style.backgroundColor = '#f0f0f0';
+    });
+
+    // Highlight the result field of the clicked operation
+    switch (operationType) {
+      case 'add':
+        document.getElementById('addResult').style.backgroundColor = 'yellow';
+        break;
+      case 'subtract':
+        document.getElementById('subtractResult').style.backgroundColor = 'yellow';
+        break;
+      case 'multiply':
+        document.getElementById('multiplyResult').style.backgroundColor = 'yellow';
+        break;
+      case 'divide':
+        document.getElementById('divideResult').style.backgroundColor = 'yellow';
+        break;
+    }
+  }
+
+  // Initial history display (if there's any initial data)
+  updateHistoryDisplay();
+</script>
+<a href="index.html">Quay về </a>
+</body>
+</html>
